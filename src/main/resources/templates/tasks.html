@@ -21,7 +21,7 @@
         <th>Assigned To</th>
         <th>Actions</th>
     </tr>
-    <tr th:if="${tasks == null || #lists.isEmpty(tasks)}">>
+    <tr th:if="${tasks == null || #lists.isEmpty(tasks)}">
         <td colspan="5">No tasks available</td>
     </tr>
     <tr th:each="task : ${tasks}">
