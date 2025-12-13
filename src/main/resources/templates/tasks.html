@@ -13,26 +13,24 @@
     <div style="margin-bottom: 15px;">
         <a href="/tasks/create">+ Create New Task</a>
     </div>
-
-    <!-- Task list -->
-    <ul>
-        <!-- Empty state -->
-        <li th:if="${tasks == null || #lists.isEmpty(tasks)}">
-            No tasks available
-        </li>
-
-        <!-- Task rows -->
-        <li style="display: flex;" th:each="task : ${tasks}">
-            <span style="width: 120px" th:text="${task.title}">Task title</span>
-            &nbsp;|&nbsp;
-            <span style="width: 250px" th:text="${task.description}">Task description</span>
-            &nbsp;|&nbsp;
-            <span th:text="${task.status}">Task status</span>
-            &nbsp;|&nbsp;
-            <span style="width: 50px" th:text="${task.assignedTo}">Task Assigned To</span>
-            &nbsp;|&nbsp;
-            <span style="width: 50px" ><a th:href="@{'/tasks/edit/' + ${task.id}}">Edit</a></span>
-
+<table>
+    <tr>
+        <th>Title</th>
+        <th >Description</th>
+        <th>Status</th>
+        <th>Assigned To</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:if="${tasks == null || #lists.isEmpty(tasks)}">>
+        <td colspan="5">No tasks available</td>
+    </tr>
+    <tr th:each="task : ${tasks}">
+        <td><span th:text="${task.title}">Task title</span></td>
+        <td><span th:text="${task.description}">Task description</span></td>
+        <td><span th:text="${task.status}">Task status</span></td>
+        <td><span th:text="${task.assignedTo}">Task Assigned To</span></td>
+        <td>
+            <span><a style="margin-top:0px !important" th:href="@{'/tasks/edit/' + ${task.id}}">Edit</a></span>
             &nbsp;|&nbsp;
             <form th:action="@{'/tasks/delete/' + ${task.id}}"
                   method="post"
@@ -43,8 +41,12 @@
                     Delete
                 </button>
             </form>
-        </li>
-    </ul>
+        </td>
+
+    </tr>
+</table>
+    <!-- Task list -->
+
 
     <!-- Logout -->
     <div style="margin-top: 20px;">
