@@ -1,0 +1,109 @@
+/* Global page styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for centered content */
+.container {
+    width: 400px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1976d2;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #125aa3;
+}
+
+/* Task list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Links */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1976d2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Message styles */
+.error {
+    color: #d32f2f;
+    text-align: center;
+}
+
+.success {
+    color: #388e3c;
+    text-align: center;
+}
+
+/* Button styled like a hyperlink */
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: #1976d2;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Hover effect */
+.link-button:hover {
+    color: #0d47a1;
+}
+
+/* Delete-specific styling */
+.delete-link {
+    color: #d32f2f;
+}
+
+.delete-link:hover {
+    color: #b71c1c;
+}

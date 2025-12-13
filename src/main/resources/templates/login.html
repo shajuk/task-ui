@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<div class="container">
+    <h2>Login</h2>
+
+    <p th:if="${param.expired}" class="error">
+        Session expired. Please login again.
+    </p>
+
+    <p th:if="${param.logout}" class="success">
+        Logged out successfully.
+    </p>
+
+    <form method="post" action="/login">
+        <input name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>
