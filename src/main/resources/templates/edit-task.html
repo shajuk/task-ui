@@ -20,6 +20,14 @@
                name="description"
                th:value="${task.description}" />
 
+        <input type="text"
+               name="status"
+               th:value="${task.status}" />
+
+        <input type="text"
+               name="assignedTo"
+               th:value="${task.assignedTo}" />
+
         <button type="submit">Update Task</button>
     </form>
 

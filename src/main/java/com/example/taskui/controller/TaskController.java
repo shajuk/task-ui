@@ -46,12 +46,14 @@ public class TaskController {
     @PostMapping("/tasks/create")
     public String createTask(@RequestParam String title,
                              @RequestParam(required = false) String description,
+                             @RequestParam String status,
+                             @RequestParam String assignedTo,
                              HttpServletRequest request) {
 
         String jwt = CookieUtil.getJwt(request);
         if (jwt == null) return "redirect:/login";
 
-        backendClient.createTask(jwt, title, description);
+        backendClient.createTask(jwt, title, description, status, assignedTo);
         return "redirect:/tasks";
     }
 
@@ -76,12 +78,14 @@ public class TaskController {
     public String updateTask(@PathVariable Long id,
                              @RequestParam String title,
                              @RequestParam(required = false) String description,
+                             @RequestParam String status,
+                             @RequestParam String assignedTo,
                              HttpServletRequest request) {
 
         String jwt = CookieUtil.getJwt(request);
         if (jwt == null) return "redirect:/login";
 
-        backendClient.updateTask(jwt, id, title, description);
+        backendClient.updateTask(jwt, id, title, description, status, assignedTo);
         return "redirect:/tasks";
     }
 

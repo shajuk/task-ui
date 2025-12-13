@@ -51,7 +51,7 @@ public class BackendClient {
         return response.getBody();
     }
 
-    public void createTask(String jwt, String title, String description) {
+    public void createTask(String jwt, String title, String description, String status, String assignedTo) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(jwt);
@@ -60,6 +60,8 @@ public class BackendClient {
         Map<String, String> body = new HashMap<>();
         body.put("title", title);
         body.put("description", description);
+        body.put("status", status);
+        body.put("assignedTo", assignedTo);
 
         HttpEntity<Map<String, String>> entity =
                 new HttpEntity<>(body, headers);
@@ -89,7 +91,7 @@ public class BackendClient {
         return response.getBody();
     }
 
-    public void updateTask(String jwt, Long id, String title, String description) {
+    public void updateTask(String jwt, Long id, String title, String description, String status, String assignedTo) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(jwt);
@@ -97,6 +99,8 @@ public class BackendClient {
         Map<String, Object> body = new HashMap<>();
         body.put("title", title);
         body.put("description", description);
+        body.put("status", status);
+        body.put("assignedTo", assignedTo);
         HttpEntity<Map<String, Object>> entity =
                 new HttpEntity<>(body, headers);
         restTemplate.exchange(
