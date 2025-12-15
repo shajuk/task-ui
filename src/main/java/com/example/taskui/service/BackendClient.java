@@ -25,7 +25,7 @@ public class BackendClient {
 
         ResponseEntity<Map> response =
                 restTemplate.postForEntity(
-                        backendUrl + "/auth/login",
+                        backendUrl + "/api/token",
                         body,
                         Map.class
                 );
